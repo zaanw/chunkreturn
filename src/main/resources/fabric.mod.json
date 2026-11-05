@@ -1,0 +1,12 @@
+{
+ "schemaVersion":1,
+ "id":"chunkreturn",
+ "version":"${version}",
+ "name":"ChunkReturn",
+ "authors":["zaan"],
+ "license":"MIT",
+ "environment":"client",
+ "entrypoints":{"client":["dev.zaan.chunkreturn.ChunkReturnClient"]},
+ "mixins":["chunkreturn.mixins.json"],
+ "depends":{"fabricloader":">=0.19.5","minecraft":"26.3","java":">=25","fabric-api":"*"}
+}
