@@ -22,10 +22,10 @@ public final class ChunkReturnClient implements ClientModInitializer {
         KeyMapping.Category category = KeyMapping.Category.register(
             Identifier.fromNamespaceAndPath("chunkreturn", "settings"));
         KeyMapping key = KeyMappingHelper.registerKeyMapping(
-            new KeyMapping("key.chunkreturn.open", InputConstants.Type.KEYSYM,
+            new KeyMapping("key.chunkreturn.open", InputConstants.Type.KEYBOARD,
                 InputConstants.KEY_RSHIFT, category));
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            while (key.consumeClick()) client.setScreen(new ConfigScreen(client.screen));
+            while (key.consumeClick()) client.gui.setScreen(new ConfigScreen(client.gui.screen()));
         });
     }
     public static boolean active() { return config != null && config.enabled && !sodiumPresent; }
